@@ -905,7 +905,13 @@ h3.my-profession {
     padding-right: 15%;
   }
   .portfolio .service-item .service-item-inner {
-    height: 320px;
+    height: 350px;
   }
+}
+
+@media (max-width: 400px) {
+  .portfolio .service-item .service-item-inner {
+    height: 350px;
+  } 
 }
 
