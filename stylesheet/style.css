@@ -855,7 +855,10 @@ h3.my-profession {
     margin-bottom: 20px;
   }
   .portfolio .service-item .service-item-inner {
-    height: 400px;
+    height: 320px;
+  }
+  .portfolio .githublogo {
+    margin: 0 0 25px 12px;
   }
 }
 
@@ -876,7 +879,7 @@ h3.my-profession {
    display: none;
  }
  .portfolio .service-item .service-item-inner {
-  height: 320px;
+  height: 265px;
 }
 }
 
@@ -894,5 +897,8 @@ h3.my-profession {
   }
   .about .about-content .skills {
     padding-right: 15%;
+  }
+  .portfolio .service-item .service-item-inner {
+    height: 300px;
   }
 }
