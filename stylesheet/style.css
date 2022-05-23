@@ -902,3 +902,8 @@ h3.my-profession {
     height: 300px;
   }
 }
+
+@media (max-width: 950px) {
+.portfolio .service-item .service-item-inner {
+  height: 290px;
+} }
