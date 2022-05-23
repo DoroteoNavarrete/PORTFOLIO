@@ -602,6 +602,8 @@ h3.my-profession {
   text-align: center;
   transition: all 0.3s ease;
   margin: 10px;
+  max-height: 400px;
+  height: 290px;
 }
 
 .portfolio .service-item .service-item-inner:hover {
@@ -853,7 +855,7 @@ h3.my-profession {
     margin-bottom: 20px;
   }
   .portfolio .service-item .service-item-inner {
-    height: 300px;
+    height: 400px;
   }
 }
 
@@ -873,6 +875,9 @@ h3.my-profession {
   .home .home-img {
    display: none;
  }
+ .portfolio .service-item .service-item-inner {
+  height: 320px;
+}
 }
 
 @media (max-width:767px) { 
