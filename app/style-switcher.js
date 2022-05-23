@@ -5,10 +5,14 @@ styleSwitcherToggle.addEventListener("click", () => {
 });
 
 // Hide style switcher on scroll //
-window.addEventListener("scroll", () => {
-  if (
-    document.querySelector(".style-switcher.open").classList.contains("open")
-  ) {
+// window.addEventListener("scroll", () => {
+//   if (document.querySelector(".style-switcher").classList.contains("open")) {
+//     document.querySelector(".style-switcher").classList.remove("open");
+//   }
+// });
+const styleSwitcherToggleClose = document.querySelector(".colors");
+styleSwitcherToggleClose.addEventListener("click", () => {
+  if (document.querySelector(".style-switcher").classList.contains("open")) {
     document.querySelector(".style-switcher").classList.remove("open");
   }
 });
