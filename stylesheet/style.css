@@ -883,6 +883,12 @@ h3.my-profession {
 }
 }
 
+@media (max-width: 950px) {
+  .portfolio .service-item .service-item-inner {
+    height: 290px;
+  } 
+}
+
 @media (max-width:767px) { 
   .contact .contact-form .col-6,
   .contact .contact-info-item,
@@ -899,11 +905,7 @@ h3.my-profession {
     padding-right: 15%;
   }
   .portfolio .service-item .service-item-inner {
-    height: 300px;
+    height: 320px;
   }
 }
 
-@media (max-width: 950px) {
-.portfolio .service-item .service-item-inner {
-  height: 290px;
-} }
