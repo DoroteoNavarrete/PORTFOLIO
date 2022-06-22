@@ -580,6 +580,22 @@ h3.my-profession {
   color: var(--text-black-700);
 }
 
+.about .libreries{
+  margin: 25px 0 25px 0;
+  color: var(--text-black-900);
+  display: flex;
+  justify-content: space-around;
+  max-width: 100%;
+  font-size: 1.3rem;
+}
+
+.about .fa-check-double{
+  color: var(--skin-color);
+  font-size: 1.2rem;
+}
+
+
+
 /* PORTFOLIO */
 .portfolio .container {
   padding-bottom: 40px;
