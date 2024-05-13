@@ -385,6 +385,16 @@ h3.my-profession {
 }
 
 /* About Me */
+.about {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row {
+  display: flex;
+  flex-grow: 1;
+}
+
 .about .about-content {
   flex: 0 0 100%;
   max-width: 100%;
@@ -395,8 +405,29 @@ h3.my-profession {
   max-width: 100%;
 }
 
+.about .about-content .technologies-text {
+  flex: 0 0 100%;
+  margin-top: 25%;
+  margin-bottom: 0%;
+  max-width: 100%;
+}
+
 .about .about-content .about-text h3 {
   font-size: 30px;
+  margin-bottom: 15px;
+  font-weight: 700;
+  color: var(--text-black-900);
+}
+
+.about .about-content .technologies-text h4 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  font-weight: 700;
+  color: var(--text-black-900);
+}
+
+.about .about-content .about-text h4 {
+  font-size: 22px;
   margin-bottom: 15px;
   font-weight: 700;
   color: var(--text-black-900);
@@ -589,11 +620,37 @@ h3.my-profession {
   font-size: 1.3rem;
 }
 
+.about .libreries .column {
+  width: 80px;
+  flex-grow: 1;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+}
+
+
 .about .fa-check-double{
   color: var(--skin-color);
   font-size: 1.2rem;
 }
 
+@media screen and (max-width: 500px) {
+  .about .libreries {
+    display: none;
+  }
+
+  .about .libreries .column {
+    display: none;
+  }
+
+  .about .about-content .skills {
+    margin: 0%;
+  }
+
+  .about .about-content .technologies-text {
+    display: none;
+  }
+}
 
 
 /* PORTFOLIO */
