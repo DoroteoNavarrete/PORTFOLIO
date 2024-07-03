@@ -755,6 +755,59 @@ h3.my-profession {
   font-size: 34px;
 }
 
+/* CERTIFICATES */
+.certificates-carousel {
+  position: relative;
+  max-width: auto;
+  margin: auto;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  max-height: 600px; /* Ajusta esta altura según sea necesario */
+  border-radius: 10px;
+  object-fit: contain; /* Esto asegura que la imagen se ajuste sin perder su proporción */
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 1; /* Asegura que los botones estén por encima de las imágenes */
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
 /* PORTFOLIO */
 /*
 .portfolio .container {
@@ -980,6 +1033,27 @@ h3.my-profession {
   .portfolio .service-item .service-item-inner {
     height: 350px;
   }
+  /* .carousel-item img {
+    width: 100%;
+    height: auto;
+    max-height: 400px; 
+    border-radius: 10px;
+    object-fit: contain; 
+  }
+
+  .carousel-item {
+    min-width: 400px;
+    box-sizing: border-box;
+  }
+
+  .certificates-carousel {
+    max-width: 400px;
+    margin: 1px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+  } */
+  
 }
 
 @media (max-width: 400px) {
