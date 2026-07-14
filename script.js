@@ -4,6 +4,17 @@
 document.addEventListener('DOMContentLoaded', () => {
 
 // ========================
+// THEME TOGGLE — DARK / LIGHT MODE
+// ========================
+const themeToggle = document.getElementById('themeToggle');
+
+themeToggle.addEventListener('click', () => {
+    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+});
+
+// ========================
 // NAVBAR — SCROLL + HAMBURGER
 // ========================
 const navbar    = document.getElementById('navbar');

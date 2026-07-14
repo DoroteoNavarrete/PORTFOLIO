@@ -11,6 +11,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <script>
+        (function () {
+            var stored = localStorage.getItem('theme');
+            var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
 </head>
 <body>
 
@@ -18,20 +25,26 @@
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <a href="#home" class="nav-logo"><span>D</span>oro</a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#certifications" class="nav-link">Certifications</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <div class="nav-actions">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon theme-toggle__icon theme-toggle__icon--dark"></i>
+                    <i class="fas fa-sun theme-toggle__icon theme-toggle__icon--light"></i>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -137,10 +150,10 @@
                     <h3>AI-Assisted Dev</h3>
                     <p>Claude Code (certified), Kiro spec-driven development, GitHub Copilot — hands-on proficiency with agentic and spec-driven workflows in daily development.</p>
                 </article>
-                <article class="bento-cell reveal-item">
+                <article class="bento-cell bento-cell--wide reveal-item">
                     <div class="bento-icon"><i class="fas fa-display"></i></div>
                     <h3>Frontend</h3>
-                    <p>Angular, TypeScript, JavaScript, React.</p>
+                    <p>Angular, TypeScript and Kendo-UI power the SPA layer I ship in production at Baufest, alongside Razor views for internal tooling. React and Vue come from self-driven projects, where I owned the UI end to end.</p>
                 </article>
                 <article class="bento-cell reveal-item">
                     <div class="bento-icon"><i class="fas fa-diagram-project"></i></div>
