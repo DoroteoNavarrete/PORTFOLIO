@@ -1,1046 +1,493 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio Web</title>
-    <!-- ==== CSS Files ==== -->
-    <link rel="stylesheet" href="stylesheet/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Doroteo Navarrete — Semi-Senior FullStack &amp; Cloud Software Developer specialized in AWS Serverless, .NET, Angular and Dell Boomi, with AI-assisted development workflows.">
+    <title>Doroteo Navarrete | FullStack &amp; Cloud Software Developer</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23007f4e'/%3E%3Ctext x='50' y='69' font-family='Arial, sans-serif' font-size='58' font-weight='700' fill='white' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        (function () {
+            var stored = localStorage.getItem('theme');
+            var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+</head>
+<body>
 
-    <!-- Style Switcher -->
-    <link rel="stylesheet" href="stylesheet/skins/color-1.css" class="alternate-style" title="color-1" disabled/>
-    <link rel="stylesheet" href="stylesheet/skins/color-2.css" class="alternate-style" title="color-2" disabled/>
-    <link rel="stylesheet" href="stylesheet/skins/color-3.css" class="alternate-style" title="color-3" disabled/>
-    <link rel="stylesheet" href="stylesheet/skins/color-4.css" class="alternate-style" title="color-4" disabled/>
-    <link rel="stylesheet" href="stylesheet/skins/color-5.css" class="alternate-style" title="color-5" disabled/>
-
-    <link rel="stylesheet" href="stylesheet/styleswitcher.css">
-  </head>
-  <body>
-    <!-- ==== MAIN start ==== -->
-
-    <div class="main-container">
-      <!-- ==== Aside start ==== -->
-      <div class="aside">
-        <div class="logo">
-          <a href="#"><span>D</span>oro</a>
+    <!-- ======================== NAVBAR ======================== -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="nav-logo"><span>D</span>oro</a>
+            <div class="nav-actions">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon theme-toggle__icon theme-toggle__icon--dark"></i>
+                    <i class="fas fa-sun theme-toggle__icon theme-toggle__icon--light"></i>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
-        <div class="nav-toggler">
-          <span></span>
+    </nav>
+
+    <!-- ======================== HERO ======================== -->
+    <section class="hero" id="home">
+        <div class="container hero-container">
+            <div class="hero-content reveal">
+                <span class="hero-badge"><i class="fas fa-location-dot"></i> Montevideo, Uruguay · Remote</span>
+                <h1>Hi, I'm <span>Doroteo Navarrete</span></h1>
+                <p class="hero-role">Semi-Senior FullStack &amp; Cloud Software Developer</p>
+                <p class="hero-slogan">I build production systems on AWS Serverless and .NET/Angular at Baufest, and bring agentic AI tooling into how I ship — fast, without cutting corners on production quality.</p>
+                <div class="hero-actions">
+                    <a download="CV - DoroteoNavarrete" href="cv/CV - DoroteoNavarrete.pdf" class="btn-primary"><i class="fas fa-download"></i> Download CV</a>
+                    <a href="#projects" class="btn-secondary">View projects</a>
+                </div>
+            </div>
+            <div class="hero-media reveal">
+                <div class="hero-photo-wrap">
+                    <img src="img/IMG_20241115_080851.jpg" alt="Portrait of Doroteo Navarrete" class="hero-photo">
+                </div>
+            </div>
         </div>
-        <ul class="nav">
-          <li>
-            <a href="#home" class="active"><i class="fa fa-home"></i> Home</a>
-          </li>
-          <li>
-            <a href="#about"><i class="fa fa-user"></i> About</a>
-          </li>
-          <li>
-            <a href="#portfolio"><i class="fa fa-briefcase"></i>Portfolio</a>
-          </li>
-          <li>
-            <a href="#certificates"><i class="fa fa-trophy"></i>Certificates</a>
-          </li>
-          <li>
-            <a href="#contact"><i class="fa fa-comments"></i>Contact</a>
-          </li>
-        </ul>
-      </div>
-      <!-- ==== Aside end ==== -->
-      <!-- ==== MAIN Content start ==== -->
-      <div class="main-content">
-        <!-- ==== HOME Section start ==== -->
-        <section class="home active section" id="home">
-          <div class="container">
-            <div class="row" style="padding-top: 50px;">
-              <div class="home-info padd-15">
-                <h3 class="hello">
-                  Hello, my name is <span class="name">Doroteo Navarrete</span>
-                </h3>
-                <h3 class="my-profession">
-                  I'm a <span class="typing">Web Developer</span>
-                </h3>
-                <p>
-                  I am a positive, enthusiastic and competent Software developer who,
-                  over the years has accumulated a wide range of skills,
-                  qualities and atributes that ensure I will perform highly in
-                  this amazing role.
-                </p>
-                <a download="CV - DoroteoNavarrete" href="cv/CV - DoroteoNavarrete.pdf" class="btn" >Download CV</a>
-              </div>
-              <div class="home-img padd-15">
-                <img src="./img/CVFOTO.jpg" alt="" />
-              </div>
+    </section>
+
+    <!-- ======================== STATS BAND ======================== -->
+    <section class="stats-band" aria-label="Quick facts">
+        <div class="container stats-grid reveal">
+            <div class="stat-item">
+                <span class="stat-number" data-target="4" data-suffix="+">0</span>
+                <span class="stat-label">Years of professional experience</span>
             </div>
-          </div>
-        </section>
-        <!-- ==== HOME Section end ==== -->
-
-        <!-- ==== About Section start ==== -->
-        <section class="about section" id="about">
-          <div class="container">
-            <div class="row">
-              <div class="section-title padd-15">
-                <h2>About Me</h2>
-              </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="10" data-suffix="+">0</span>
+                <span class="stat-label">Certifications across cloud, integration &amp; AI tooling</span>
             </div>
-            <div class="row">
-              <div class="about-content padd-15">
-                <div class="row">
-                  <div class="about-text padd-15">
-                    <h3>I'm Doroteo Navarrete <span>Web Developer</span></h3>
-                    <p>
-                      I am an enthusiastic and adaptable software
-                      developer, dedicated to deliver the best in every
-                      project. I currently work as a FullStack
-                      developer, with skills in several languages and
-                      technologies.
-                      I am proactive, sociable and fluent in English. I
-                      am committed to personal and professional
-                      growth, always looking for new challenges that
-                      push me to improve myself.
-                      <br>
-                      <br>
-                      During this period I have made developments and
-                      new implementations in the projects in which I
-                      have worked, as well as I have analyzed and
-                      solved bugs as support, even at production level.
-                      On the other hand, I also participated in the
-                      migration of a project to new technologies.
-                      I have also been in charge of the production
-                      releases, making sure that the process is
-                      correct.
-                      
-                    </p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="personal-info padd-15">
-                    <div class="row">
-                      <div class="info-item padd-15">
-                        <p>Birthday : <span>24 dic 1995</span></p>
-                      </div>
-                      <div class="info-item padd-15">
-                        <p>Email : <span>navarretedoro@gmail.com</span></p>
-                      </div>
-                      <div class="info-item padd-15">
-                        <p>Phone : <span>+598 98 653413</span></p>
-                      </div>
-                      <div class="info-item padd-15">
-                        <a target="_blank" href="https://www.instagram.com/doronavarrete/"><p>Instagram : <span>@doro.navarrete</span></p></a>
-                      </div>
-                      <div class="info-item padd-15">
-                        <a href="https://www.linkedin.com/in/doroteo-navarrete-1872a8235/" target="_blank"><p>Linkedln : <span>Doroteo Navarrete</span></p></a>
-                      </div>
-                      <div class="info-item padd-15">
-                        <p>City : <span>Montevideo - Uruguay</span></p>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="buttons padd-15">
-                        <a href="#contact" data-section-index="1" class="btn hire-me">Hire Me</a>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="technologies-text padd-15">
-                        <h4>Technologies:</h4>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="skills padd-15">
-                    <div class="row">
-                      <div class="about-text padd-15">
-                        <h4>Languages:</h4>
-                      </div>
-                      <div class="skill-item padd-15">
-                        <h5>C#</h5>
-                        <div class="progress">
-                          <div class="progress-in" style="width: 100%"></div>
-                          <div class="skill-percent">Advanced</div>
-                        </div>
-                      </div>
-                      <div class="skill-item padd-15">
-                        <h5>TypeScript</h5>
-                        <div class="progress">
-                          <div class="progress-in" style="width: 90%"></div>
-                          <div class="skill-percent">Advanced</div>
-                        </div>
-                      </div>
-                      <div class="skill-item padd-15">
-                        <h5>SQL</h5>
-                        <div class="progress">
-                          <div class="progress-in" style="width: 75%"></div>
-                          <div class="skill-percent">Intermediate</div>
-                        </div>
-                      </div>
-                      <div class="skill-item padd-15">
-                        <h5>Java</h5>
-                        <div class="progress">
-                          <div class="progress-in" style="width: 60%"></div>
-                          <div class="skill-percent">Intermediate/Beginner</div>
-                        </div>
-                      </div>
-                      <div class="skill-item padd-15">
-                        <h5>Python</h5>
-                        <div class="progress">
-                          <div class="progress-in" style="width: 40%"></div>
-                          <div class="skill-percent">Beginner</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="row libreries">
-                  <div class="column padd-15">
-                    <h5> <i class="fa-solid fa-check-double"></i> Boostrap</h5>
-                  </div>
-
-                  <div class="column padd-15">
-                    <h5> <i class="fa-solid fa-check-double"></i> React</h5>
-                  </div>
-                  
-                  <div class="column padd-15">
-                    <h5> <i class="fa-solid fa-check-double"></i> Git</h5>
-                  </div>
-
-                  <div class="column padd-15">
-                    <h5> <i class="fa-solid fa-check-double"></i> GitHub</h5>
-                  </div>
-
-                  <div class="column padd-15">
-                    <h5> <i class="fa-solid fa-check-double"></i> Babbel</h5>
-                  </div>
-
-                  <div class="column padd-15">
-                    <h5> <i class="fa-solid fa-check-double"></i> Scrum</h5>
-                  </div>
-                </div>
-
-                <div class="row libreries">
-                  
-                  <div class="column padd-15">
-                    <h5> <i class="fa-solid fa-check-double"></i> Spring Boot</h5>
-                  </div>
-
-                  <div class="column padd-15">
-                    <h5> <i class="fa-solid fa-check-double"></i> Postman</h5>
-                  </div>
-
-                  <div class="column padd-15">
-                    <h5> <i class="fa-solid fa-check-double"></i> Testing</h5>
-                  </div>
-
-                  <div class="column padd-15">
-                    <h5> <i class="fa-solid fa-check-double"></i> Axios</h5>
-                  </div>
-
-                  <div class="column padd-15">
-                    <h5> <i class="fa-solid fa-check-double"></i> Octopus</h5>
-                  </div>
-
-                  <div class="column padd-15">
-                    <h5> <i class="fa-solid fa-check-double"></i> SQL</h5>
-                  </div>
-                </div>
-
-                <div class="row libreries">
-                  <div class="column padd-15">
-                    <h5> <i class="fa-solid fa-check-double"></i> CSS</h5>
-                  </div>
-                  <div class="column padd-15">
-                    <h5> <i class="fa-solid fa-check-double"></i> Tailwind</h5>
-                  </div>
-                  <div class="column padd-15">
-                    <h5> <i class="fa-solid fa-check-double"></i> Azure Services</h5>
-                  </div>
-                  <div class="column padd-15">
-                    <h5> <i class="fa-solid fa-check-double"></i> HangFire</h5>
-                  </div>
-                  <div class="column padd-15">
-                    <h5> <i class="fa-solid fa-check-double"></i> TaskScheduler</h5>
-                  </div>
-                  <div class="column padd-15">
-                    <h5> <i class="fa-solid fa-check-double"></i> Kendo-ui</h5>
-                  </div>
-                </div>
-
-                <div class="row libreries">
-                  <div class="column padd-15">
-                    <h5> <i class="fa-solid fa-check-double"></i> HTML</h5>
-                  </div>
-                  <div class="column padd-15">
-                    <h5> <i class="fa-solid fa-check-double"></i> Angular</h5>
-                  </div>
-                  <div class="column padd-15">
-                    <h5> <i class="fa-solid fa-check-double"></i> SQL Profiler</h5>
-                  </div>
-                  <div class="column padd-15">
-                    <h5> <i class="fa-solid fa-check-double"></i> Android Studio</h5>
-                  </div>
-                  <div class="column padd-15">
-                    <h5> <i class="fa-solid fa-check-double"></i> Virtual Device</h5>
-                  </div>
-                  <div class="column padd-15">
-                    <h5> <i class="fa-solid fa-check-double"></i> Razor</h5>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="education padd-15">
-                    <h3 class="title">Education</h3>
-                    <div class="row">
-                      <div class="timeline-box padd-15">
-                        <div class="timeline shadow-dark">
-                          <!-- ==== Timeline ==== -->
-                          <div class="timeline-item">
-                            <div class="circle-dot"></div>
-                            <h3 class="timeline-date">
-                              <i class="fa fa-calendar"></i> 2024
-                            </h3>
-                            <h4 class="timeline-title">
-                              Back End Development and APIs - freeCodeCamp
-                            </h4>
-                            <p class="timeline-text">
-                              In this course I learn how to write back end apps with Node.js and npm. <br>
-                              I also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library.                           
-                            </p>
-                          </div>
-                          <!-- ==== Timeline ==== -->
-                          <div class="timeline-item">
-                            <div class="circle-dot"></div>
-                            <h3 class="timeline-date">
-                              <i class="fa fa-calendar"></i> 2024
-                            </h3>
-                            <h4 class="timeline-title">
-                              Microsoft Azure Fundamentals AZ-900 - Udemy
-                            </h4>
-                            <p class="timeline-text">
-                              This course provides foundational knowledge on cloud concepts, core Azure services, and Azure management and governance features. <br>
-                              It’s designed for beginners who want to learn about Azure offerings and gain hands-on experience without requiring scripting skills.                           
-                            </p>
-                          </div>
-                          <!-- ==== Timeline ==== -->
-                          <div class="timeline-item">
-                            <div class="circle-dot"></div>
-                            <h3 class="timeline-date">
-                              <i class="fa fa-calendar"></i> 2023
-                            </h3>
-                            <h4 class="timeline-title">
-                              Microsoft Learn Cloud Skills Challenge 2023 - Microsoft
-                            </h4>
-                            <p class="timeline-text">
-                              The Microsoft Learn Cloud Skills Challenge at Ignite 2023 was a special edition learning journey hosted during Microsoft Ignite. 
-                              Participants had the opportunity to enhance their skills in various areas, including AI, DevOps, Microsoft 365, low code, IoT, data science, and cloud development                         
-                            </p>
-                          </div>
-                          <!-- ==== Timeline ==== -->
-                          <div class="timeline-item">
-                            <div class="circle-dot"></div>
-                            <h3 class="timeline-date">
-                              <i class="fa fa-calendar"></i> 2023
-                            </h3>
-                            <h4 class="timeline-title">
-                              GitHub Universe 2023 - Microsoft
-                            </h4>
-                            <p class="timeline-text">
-                              The GitHub Universe 2023 Cloud Skills Challenge was a 30-day learning journey hosted on Microsoft Learn. 
-                              It aimed to help participants master essential tools related to GitHub, Codespaces, and GitHub Copilot. Here’s what it entailed:
-                              <br>
-                              <br>
-                              Git Fundamentals: Participants learned about version control using Git.
-                              <br>
-                              <br>
-                              GitHub and Codespaces: They explored GitHub and how to set up their development environment in the cloud using Codespaces.
-                              <br>
-                              <br>
-                              GitHub Copilot: Participants got hands-on experience with GitHub Copilot, using it with JavaScript and Python.
-                            </div>
-                          <!-- ==== Timeline ==== -->
-                          <div class="timeline-item">
-                            <div class="circle-dot"></div>
-                            <h3 class="timeline-date">
-                              <i class="fa fa-calendar"></i> 2023
-                            </h3>
-                            <h4 class="timeline-title">
-                              Foundational C# - Microsoft & freeCodeCamp
-                            </h4>
-                            <p class="timeline-text">
-                              This course offers a comprehensive introduction to C# programming, covering its core concepts, syntax, and practical application in software development. <br>
-                              Through hands-on exercises and projects, you will learn the fundamentals of C#, including variables, data types, control structures, and object-oriented programming principles.                            
-                            </p>
-                          </div>
-                          <!-- ==== Timeline ==== -->
-                          <div class="timeline-item">
-                            <div class="circle-dot"></div>
-                            <h3 class="timeline-date">
-                              <i class="fa fa-calendar"></i> 2023
-                            </h3>
-                            <h4 class="timeline-title">
-                              English B1 - Pensaris academy
-                            </h4>
-                            <p class="timeline-text">
-                              B1 level course completed. 
-                            </p>
-                          </div>
-                          <!-- ==== Timeline ==== -->
-                          <div class="timeline-item">
-                            <div class="circle-dot"></div>
-                            <h3 class="timeline-date">
-                              <i class="fa fa-calendar"></i> 2022
-                            </h3>
-                            <h4 class="timeline-title">
-                              Bootcamp - Baufest
-                            </h4>
-                            <p class="timeline-text">
-                              80hrs Bootcamp, coding a lot where I learned and applied the use of 
-                              Java as a BackEnd language with Spring Boot, Maven, Postman, PostgresSQL and Testing. As 
-                              FrontEnd language we use JavaScript with React, Axios, Bootstrap and Babbel.
-                              Also I learned how to apply the scrum method, working as a team. 
-                            </p>
-                          </div>
-                          <!-- ==== Timeline ==== -->
-                          <div class="timeline-item">
-                            <div class="circle-dot"></div>
-                            <h3 class="timeline-date">
-                              <i class="fa fa-calendar"></i> 2022
-                            </h3>
-                            <h4 class="timeline-title">
-                              SQL - W3Schools
-                            </h4>
-                            <p class="timeline-text">
-                              In the course I learn how to use SQL in: MySQL, SQL Server, MS Access, 
-                              Oracle, Sybase, Informix, Postgres, and other database systems.
-                            </p>
-                          </div>
-                          <!-- ==== Timeline ==== -->
-                          <div class="timeline-item">
-                            <div class="circle-dot"></div>
-                            <h3 class="timeline-date">
-                              <i class="fa fa-calendar"></i> 2022
-                            </h3>
-                            <h4 class="timeline-title">
-                              JavaScript Algorithms and Data Structures course -
-                              freeCodeCamp
-                            </h4>
-                            <p class="timeline-text">
-                              While HTML and CSS control the content and styling of a page, JavaScript is used to make it interactive. In the JavaScript Algorithm and Data Structures Certification, you'll learn the fundamentals of JavaScript including variables, arrays, objects, loops, and functions.
-                                <br>
-                              Once you have the fundamentals down, you'll apply that knowledge by creating algorithms to manipulate strings, factorialize numbers, and even calculate the orbit of the International Space Station.
-                                <br>
-                              Along the way, you'll also learn two important programming styles or paradigms: Object Oriented Programming (OOP) and Functional Programming (FP).
-                            </p>
-                          </div>
-                          <!-- ==== Timeline ==== -->
-                          <div class="timeline-item">
-                            <div class="circle-dot"></div>
-                            <h3 class="timeline-date">
-                              <i class="fa fa-calendar"></i> 2022
-                            </h3>
-                            <h4 class="timeline-title">
-                              Front-End Course - Hack Academy
-                            </h4>
-                            <p class="timeline-text">
-                              The Front-End course will give you the necessary tools to create attractive websites using HTML, CSS and JavaScript. The program was developed together with Silicon Valley experts.
-                            </p>
-                          </div>
-                          <!-- ==== Timeline ==== -->
-                          <div class="timeline-item">
-                            <div class="circle-dot"></div>
-                            <h3 class="timeline-date">
-                              <i class="fa fa-calendar"></i> 2017 - 2019
-                            </h3>
-                            <h4 class="timeline-title">
-                              Agronomic Engineering in FAGRO
-                            </h4>
-                            <p class="timeline-text">
-                              Study until finishing 3rd year.
-                            </p>
-                          </div>
-                          <!-- ==== Timeline ==== -->
-                          <div class="timeline-item">
-                            <div class="circle-dot"></div>
-                            <h3 class="timeline-date">
-                              <i class="fa fa-calendar"></i> 2013 - 2017
-                            </h3>
-                            <h4 class="timeline-title">
-                              Agricultural Technician                            </h4>
-                            <p class="timeline-text">
-                              I am graduated from the technical degree based on agricultural and livestock production dictated in EEBR.
-                            </p>
-                          </div>
-                          <!-- ==== Timeline ==== -->
-                          <div class="timeline-item">
-                            <div class="circle-dot"></div>
-                            <h3 class="timeline-date">
-                              <i class="fa fa-calendar"></i> 2014
-                            </h3>
-                            <h4 class="timeline-title">
-                              First year in English
-                            </h4>
-                            <p class="timeline-text">
-                              Anglo Academy
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="experience padd-15">
-                    <h3 class="title">Experience</h3>
-                    <div class="row">
-                      <div class="timeline-box padd-15">
-                        <div class="timeline shadow-dark">
-                          <!-- ==== Timeline ==== -->
-                          <div class="timeline-item">
-                            <div class="circle-dot"></div>
-                            <h3 class="timeline-date">
-                              <i class="fa fa-calendar"></i> 01/2023 - ...
-                            </h3>
-                            <h4 class="timeline-title">
-                              Jr. Software Developer at Baufest S.A
-                            </h4>
-                            <p class="timeline-text">
-                              In this period I strengthened my skills in the technologies in which I have worked, in addition to being able to provide support and solve problems quickly. <br>
-
-                              As well as being able to support and solve problems quickly, including in the Production environment. <br>
-
-                              Solidify knowledge in TeamCity and Octopus, to the point of being the one in charge of executing the production releases. <br>
-
-                              Incorporate knowledge in Azure Sevices, Andriod with java and the use of Adroid studio, make developments that allowed the execution of automatic tasks from the systems, 
-                              either by HangFire as by TaskSchedule. <br>
-
-                              I participated in the migration of a system to a different and new technology, as well as participated in various multicultural teams and I was adapting to the different 
-                              technologies needed to perform my work. <br>
-
-                              To the point of needing very little help when taking on and executing tasks.
-                            </p>
-                          </div>
-                          <!-- ==== Timeline ==== -->
-                          <div class="timeline-item">
-                            <div class="circle-dot"></div>
-                            <h3 class="timeline-date">
-                              <i class="fa fa-calendar"></i> 07/2022 - 01/2023
-                            </h3>
-                            <h4 class="timeline-title">
-                              Trainee. Software Developer at Baufest S.A
-                            </h4>
-                            <p class="timeline-text">
-                              During this period of time I was able to adapt to work in two totally new technologies for me, Agular and .NET. <br>
-
-                              In addition to that I emphasize the use of SQL database in SQL Server, SQL Profiler and creation of data models, also the management of Git and GitLab. <br>
-
-                              On the other hand, I got to know the work under agile methodologies (SCRUM) and I joined my first multinational team.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="10" data-suffix="+">0</span>
+                <span class="stat-label">Client sites delivered via NetGuay Creations</span>
             </div>
-          </div>
-        </section>
-        <!-- ==== About Section end ==== -->
+        </div>
+    </section>
 
-        <!-- ==== Portfolio Section Start ==== -->
-        <section class="portfolio section" id="portfolio">
-          <div class="container">
-            <div class="row">
-              <div id="portfolioTitle" class="section-title padd-15">
-                <h2>Portfolio</h2>
-              </div>
-              <div id="paddingbuttom" class="githublogo">
-                <a class="githubbtn" target="_blank" href="https://github.com/DoroteoNavarrete">
-                  <i class="fa-brands fa-github-square"></i>
+    <!-- ======================== ABOUT ======================== -->
+    <section class="section" id="about">
+        <div class="container about-container">
+            <div class="about-text reveal">
+                <span class="section-tag">About</span>
+                <h2>Building production software <span>end to end</span></h2>
+                <p>I'm a Semi-Senior FullStack &amp; Cloud Software Developer at Baufest, where I grew from trainee to independently owning delivery across multiple client projects. I specialize in AWS Serverless and Event-Driven architectures — Lambda, API Gateway, SQS, S3, DynamoDB — on a foundation of C#/.NET, Angular and SQL, with system integrations delivered through Dell Boomi (Professional Integration Developer certified).</p>
+                <p>I've taken responsibility for production deployments and releases (TeamCity, Octopus Deploy, HangFire), automated recurring processes, and worked directly with clients in reconciliation sessions to help shape technical decisions. More recently I've been leaning into AI-assisted, agentic development — Claude Code (certified), Kiro's spec-driven workflow, GitHub Copilot — to ship faster without cutting corners on clean code and production quality.</p>
+                <a href="#contact" class="btn-primary about-cta">Get in touch</a>
+            </div>
+            <div class="about-facts reveal">
+                <div class="fact-item">
+                    <div class="fact-icon"><i class="fas fa-envelope"></i></div>
+                    <div><span class="fact-label">Email</span><span class="fact-value">navarretedoro@gmail.com</span></div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-icon"><i class="fas fa-phone"></i></div>
+                    <div><span class="fact-label">Phone</span><span class="fact-value">+598 98 653413</span></div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-icon"><i class="fas fa-location-dot"></i></div>
+                    <div><span class="fact-label">Location</span><span class="fact-value">Montevideo, Uruguay</span></div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-icon"><i class="fas fa-language"></i></div>
+                    <div><span class="fact-label">Languages</span><span class="fact-value">Spanish (native), English (B2)</span></div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-icon"><i class="fab fa-linkedin"></i></div>
+                    <div><span class="fact-label">LinkedIn</span><a class="fact-value fact-link" href="https://www.linkedin.com/in/doroteo-navarrete-1872a8235/" target="_blank" rel="noopener noreferrer">doroteo-navarrete</a></div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-icon"><i class="fab fa-github"></i></div>
+                    <div><span class="fact-label">GitHub</span><a class="fact-value fact-link" href="https://github.com/DoroteoNavarrete" target="_blank" rel="noopener noreferrer">DoroteoNavarrete</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== SKILLS ======================== -->
+    <section class="section section-alt" id="skills">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Skills</span>
+                <h2>What I build <span>with</span></h2>
+                <p>A cloud-native, production-focused stack — plus the AI-assisted workflows I use to ship it faster.</p>
+            </div>
+            <div class="bento-grid reveal-group">
+                <article class="bento-cell bento-cell--wide reveal-item">
+                    <div class="bento-icon"><i class="fas fa-server"></i></div>
+                    <h3>Backend</h3>
+                    <p>C# / .NET, ASP.NET Core, Entity Framework Core, SQL Server. REST APIs and microservices built around SOLID and clean-code principles — the foundation I started on at Baufest and still ship on today.</p>
+                </article>
+                <article class="bento-cell bento-cell--wide reveal-item">
+                    <div class="bento-icon"><i class="fas fa-cloud"></i></div>
+                    <h3>Cloud</h3>
+                    <p>AWS Serverless &amp; Event-Driven architecture — Lambda, API Gateway, SQS, S3, DynamoDB. Where I moved after my first year at Baufest, and it's become my strongest area: designing systems that hold up under real production load.</p>
+                </article>
+                <article class="bento-cell bento-cell--wide reveal-item">
+                    <div class="bento-icon"><i class="fas fa-robot"></i></div>
+                    <h3>AI-Assisted Dev</h3>
+                    <p>Claude Code (certified), Kiro spec-driven development, GitHub Copilot — hands-on proficiency with agentic and spec-driven workflows in daily development.</p>
+                </article>
+                <article class="bento-cell bento-cell--wide reveal-item">
+                    <div class="bento-icon"><i class="fas fa-display"></i></div>
+                    <h3>Frontend</h3>
+                    <p>Angular, TypeScript and Kendo-UI power the SPA layer I ship in production at Baufest, alongside Razor views for internal tooling. React and Vue come from self-driven projects, where I owned the UI end to end.</p>
+                </article>
+                <article class="bento-cell reveal-item">
+                    <div class="bento-icon"><i class="fas fa-diagram-project"></i></div>
+                    <h3>Integration</h3>
+                    <p>Dell Boomi (iPaaS) integrations between internal systems and third-party services, with event-driven messaging patterns.</p>
+                </article>
+                <article class="bento-cell reveal-item">
+                    <div class="bento-icon"><i class="fas fa-gears"></i></div>
+                    <h3>Release &amp; DevOps</h3>
+                    <p>TeamCity and Octopus Deploy for CI/CD and production releases; HangFire and Task Scheduler for automated recurring jobs; Git-based workflows across cross-functional teams.</p>
+                </article>
+                <article class="bento-cell reveal-item">
+                    <div class="bento-icon"><i class="fas fa-shield-halved"></i></div>
+                    <h3>Practices</h3>
+                    <p>SOLID and Clean Code as defaults, not afterthoughts; secure-by-design habits from OWASP; Scrum/Agile delivery end to end.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== EXPERIENCE ======================== -->
+    <section class="section" id="experience">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Experience</span>
+                <h2>Where I've <span>grown</span></h2>
+            </div>
+            <div class="timeline reveal-group">
+                <div class="timeline-entry reveal-item">
+                    <div class="timeline-rail"><span class="timeline-dot"></span></div>
+                    <div class="timeline-card">
+                        <span class="timeline-date">Jul 2022 — Present</span>
+                        <h3>FullStack &amp; Cloud Software Developer</h3>
+                        <span class="timeline-place">Baufest SA · Montevideo, Uruguay (Remote)</span>
+                        <ul class="timeline-list">
+                            <li>Joined as a trainee and progressed to Semi-Senior Developer across multiple client projects, taking on increasing ownership at each stage.</li>
+                            <li>Started on a .NET + Angular + SQL project; took responsibility for production deployments as a Junior, automated recurring daily tasks and built third-party integrations.</li>
+                            <li>Moved into AWS cloud development specializing in Serverless and Event-Driven architectures (Lambda, API Gateway, SQS, S3, DynamoDB), with a strong production-quality focus.</li>
+                            <li>Implemented system integrations using Dell Boomi and AWS services; earned the Dell Boomi Professional Integration Developer certification.</li>
+                            <li>Worked directly with clients in reconciliation sessions, contributing technical insights to product decisions.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== EDUCATION ======================== -->
+    <section class="section section-alt" id="education">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Education</span>
+                <h2>Formal <span>foundations</span></h2>
+            </div>
+            <div class="timeline reveal-group">
+                <div class="timeline-entry reveal-item">
+                    <div class="timeline-rail"><span class="timeline-dot"></span></div>
+                    <div class="timeline-card">
+                        <span class="timeline-date">2026 — Present</span>
+                        <h3>Systems Analyst (Analista de Sistemas)</h3>
+                        <span class="timeline-place">Universidad de la Empresa (UDE) · Montevideo, Uruguay</span>
+                        <p class="timeline-summary">In progress — systems analysis and software engineering, building formal fundamentals on top of four years of hands-on production experience.</p>
+                    </div>
+                </div>
+                <div class="timeline-entry reveal-item">
+                    <div class="timeline-rail"><span class="timeline-dot"></span></div>
+                    <div class="timeline-card">
+                        <span class="timeline-date">2019 — 2022</span>
+                        <h3>Agronomic Engineering (Ingeniería Agronómica) — incomplete</h3>
+                        <span class="timeline-place">Facultad de Agronomía (UdelaR) · Montevideo, Uruguay</span>
+                        <p class="timeline-summary">Moved to Montevideo to pursue this degree while working. Choosing a productive-orientation track made it clear agronomy wasn't where my interest truly was — in 2022 I left to focus fully on software development, the pivot that led to Baufest.</p>
+                    </div>
+                </div>
+                <div class="timeline-entry reveal-item">
+                    <div class="timeline-rail"><span class="timeline-dot"></span></div>
+                    <div class="timeline-card">
+                        <span class="timeline-date">2016 — 2018</span>
+                        <h3>Agricultural Technician (Técnico Agrónomo)</h3>
+                        <span class="timeline-place">UTU · Dirección General de Educación Técnico-Profesional</span>
+                        <p class="timeline-summary">Technical-professional degree in agricultural and livestock production — the path that came before software development.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== PROJECTS ======================== -->
+    <section class="section" id="projects">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Projects</span>
+                <h2>Things I've <span>shipped</span></h2>
+            </div>
+
+            <div class="projects-group reveal">
+                <div class="projects-group__header">
+                    <h3>NetGuay Creations</h3>
+                    <p>Outside Baufest, I run NetGuay Creations, a freelance web development studio — client discovery, design, build and hosting, end to end.</p>
+                </div>
+                <div class="project-grid reveal-group">
+                    <a class="project-card reveal-item" href="https://escribanavictoriagonzalez.com/" target="_blank" rel="noopener noreferrer">
+                        <span class="project-card__cat">Estudio Notarial</span>
+                        <h4>Victoria González</h4>
+                        <span class="project-card__url">escribanavictoriagonzalez.com <i class="fas fa-arrow-up-right-from-square"></i></span>
+                    </a>
+                    <a class="project-card reveal-item" href="https://academiamediocampo.com/" target="_blank" rel="noopener noreferrer">
+                        <span class="project-card__cat">Academia Deportiva</span>
+                        <h4>Medio Campo</h4>
+                        <span class="project-card__url">academiamediocampo.com <i class="fas fa-arrow-up-right-from-square"></i></span>
+                    </a>
+                    <a class="project-card reveal-item" href="https://rocomarin.com/" target="_blank" rel="noopener noreferrer">
+                        <span class="project-card__cat">Escritorio Rural</span>
+                        <h4>Roco Marín</h4>
+                        <span class="project-card__url">rocomarin.com <i class="fas fa-arrow-up-right-from-square"></i></span>
+                    </a>
+                </div>
+                <a class="projects-group__more" href="https://www.netguay.com/portfolio" target="_blank" rel="noopener noreferrer">See more at netguay.com/portfolio <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="projects-group reveal">
+                <div class="projects-group__header">
+                    <h3>Learning projects</h3>
+                    <p>Smaller builds from courses and self-study — where I first tried out React, Vue and API integrations.</p>
+                </div>
+                <div class="project-grid project-grid--compact reveal-group">
+                    <a class="project-card reveal-item" href="https://travelingpage.netlify.app/" target="_blank" rel="noopener noreferrer">
+                        <span class="project-card__cat">React + Tailwind</span>
+                        <h4>Travels Page</h4>
+                        <span class="project-card__url">travelingpage.netlify.app <i class="fas fa-arrow-up-right-from-square"></i></span>
+                    </a>
+                    <a class="project-card reveal-item" href="https://exquisitefood.netlify.app/" target="_blank" rel="noopener noreferrer">
+                        <span class="project-card__cat">React + Styled Components</span>
+                        <h4>Food API</h4>
+                        <span class="project-card__url">exquisitefood.netlify.app <i class="fas fa-arrow-up-right-from-square"></i></span>
+                    </a>
+                    <a class="project-card reveal-item" href="https://filmserch.netlify.app/" target="_blank" rel="noopener noreferrer">
+                        <span class="project-card__cat">Vue + Bootstrap</span>
+                        <h4>Movie Finder</h4>
+                        <span class="project-card__url">filmserch.netlify.app <i class="fas fa-arrow-up-right-from-square"></i></span>
+                    </a>
+                    <a class="project-card reveal-item" href="https://github.com/DoroteoNavarrete/PORTFOLIO" target="_blank" rel="noopener noreferrer">
+                        <span class="project-card__cat">HTML · CSS · JS</span>
+                        <h4>This Portfolio</h4>
+                        <span class="project-card__url">github.com/DoroteoNavarrete/PORTFOLIO <i class="fas fa-arrow-up-right-from-square"></i></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== CERTIFICATIONS ======================== -->
+    <section class="section section-alt" id="certifications">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Certifications</span>
+                <h2>Verified <span>learning</span></h2>
+            </div>
+            <div class="cert-grid reveal-group">
+                <article class="cert-card reveal-item">
+                    <img src="img/certificates/Professional-Integration-Developer-Certification.png" alt="Dell Boomi Professional Integration Developer certificate" class="cert-card__img">
+                    <div class="cert-card__body">
+                        <h4>Professional Integration Developer</h4>
+                        <span class="cert-card__issuer">Dell Boomi · 2024</span>
+                    </div>
+                </article>
+                <article class="cert-card reveal-item">
+                    <img src="img/certificates/Associate-Integration-Developer-Certification-2024.png" alt="Dell Boomi Associate Integration Developer certificate" class="cert-card__img">
+                    <div class="cert-card__body">
+                        <h4>Associate Integration Developer</h4>
+                        <span class="cert-card__issuer">Dell Boomi · 2024</span>
+                    </div>
+                </article>
+                <article class="cert-card reveal-item">
+                    <img src="img/certificates/C-Foundational-2023.png" alt="Foundational C# certificate" class="cert-card__img">
+                    <div class="cert-card__body">
+                        <h4>Foundational C#</h4>
+                        <span class="cert-card__issuer">Microsoft / freeCodeCamp · 2023</span>
+                    </div>
+                </article>
+                <article class="cert-card reveal-item">
+                    <img src="img/certificates/Data-Analysis-with-Python-2023.png" alt="Data Analysis with Python certificate" class="cert-card__img">
+                    <div class="cert-card__body">
+                        <h4>Data Analysis with Python</h4>
+                        <span class="cert-card__issuer">Cognitive Class · 2023</span>
+                    </div>
+                </article>
+                <article class="cert-card reveal-item">
+                    <img src="img/certificates/Python-101-for-Data-Science-2023.png" alt="Python 101 for Data Science certificate" class="cert-card__img">
+                    <div class="cert-card__body">
+                        <h4>Python 101 for Data Science</h4>
+                        <span class="cert-card__issuer">Cognitive Class · 2023</span>
+                    </div>
+                </article>
+                <article class="cert-card reveal-item">
+                    <img src="img/certificates/AWSCloudPractitionerEssentials.jpg" alt="AWS Cloud Practitioner Essentials certificate" class="cert-card__img">
+                    <div class="cert-card__body">
+                        <h4>Cloud Practitioner Essentials</h4>
+                        <span class="cert-card__issuer">Amazon Web Services · 2025</span>
+                    </div>
+                </article>
+                <article class="cert-card reveal-item">
+                    <img src="img/certificates/AWSCloudQuest.jpg" alt="AWS Cloud Quest: Cloud Practitioner badge" class="cert-card__img">
+                    <div class="cert-card__body">
+                        <h4>Cloud Quest: Cloud Practitioner</h4>
+                        <span class="cert-card__issuer">Amazon Web Services · 2025</span>
+                    </div>
+                </article>
+                <article class="cert-card reveal-item">
+                    <img src="img/certificates/ClaudeCode101.jpg" alt="Claude Code 101 certificate" class="cert-card__img">
+                    <div class="cert-card__body">
+                        <h4>Claude Code 101</h4>
+                        <span class="cert-card__issuer">Anthropic · 2026</span>
+                    </div>
+                </article>
+                <article class="cert-card reveal-item">
+                    <img src="img/certificates/Claude101.jpg" alt="Claude 101 certificate" class="cert-card__img">
+                    <div class="cert-card__body">
+                        <h4>Claude 101</h4>
+                        <span class="cert-card__issuer">Anthropic · 2026</span>
+                    </div>
+                </article>
+                <article class="cert-card reveal-item">
+                    <img src="img/certificates/TheOWASP.jpg" alt="The OWASP Top 10 - Deep Dive certificate" class="cert-card__img">
+                    <div class="cert-card__body">
+                        <h4>The OWASP Top 10 – Deep Dive</h4>
+                        <span class="cert-card__issuer">Udemy · 2025</span>
+                    </div>
+                </article>
+                <article class="cert-card reveal-item">
+                    <img src="img/certificates/DevOpsCICD.jpg" alt="DevOps, CI/CD for Beginners certificate" class="cert-card__img">
+                    <div class="cert-card__body">
+                        <h4>DevOps &amp; CI/CD for Beginners</h4>
+                        <span class="cert-card__issuer">Udemy · 2025</span>
+                    </div>
+                </article>
+                <article class="cert-card reveal-item">
+                    <img src="img/certificates/MicroservicesEventDriven.jpg" alt="The Complete Microservices &amp; Event-Driven Architecture certificate" class="cert-card__img">
+                    <div class="cert-card__body">
+                        <h4>Microservices &amp; Event-Driven Architecture</h4>
+                        <span class="cert-card__issuer">Udemy · 2025</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== CONTACT ======================== -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Contact</span>
+                <h2>Let's <span>talk</span></h2>
+                <p>Open to new opportunities — reach out through any of these, or send a message below.</p>
+            </div>
+
+            <div class="contact-cards reveal-group">
+                <a class="contact-card reveal-item" href="mailto:navarretedoro@gmail.com">
+                    <div class="contact-card__icon"><i class="fas fa-envelope"></i></div>
+                    <span class="contact-card__label">Email</span>
+                    <span class="contact-card__value">navarretedoro@gmail.com</span>
                 </a>
-                <p>You can also see all codes here</p>
-              </div>
-              </div>
-            <div class="row">
-              <!-- ==== Services item Start ==== -->
-              <div class="service-item">
-                <a target="_blank" href="https://travelingpage.netlify.app/">
-                <div class="service-item-inner">
-                  <div class="icon">
-                    <i class="fa-solid fa-plane"></i>
-                  </div>
-                  <h4>Travels Page</h4>
-                  <p>
-                    This is a SPA for training with react and TailwindCSS, 
-                    actually I really enjoy and I recommend it.
-                  </p>
-                </div>
-              </a>
-              </div>
-              <!-- ==== Services item End ==== -->
-              <!-- ==== Services item Start ==== -->
-              <div class="service-item">
-                <a target="_blank" href="https://exquisitefood.netlify.app/">
-                <div class="service-item-inner">
-                  <div class="icon">
-                    <i class="fa-solid fa-utensils"></i>
-                  </div>
-                  <h4>Food Api</h4>
-                  <p>
-                    I made this page in order to use React and styled components, 
-                    calling a Food API and show same interestung thinks about the food choicen.
-                  </p>
-                </div>
-              </a>
-              </div>
-              <!-- ==== Services item End ==== -->
-              <!-- ==== Services item Start ==== -->
-              <div class="service-item">
-                <a target="_blank" href="https://papaya-games.netlify.app/">
-                <div class="service-item-inner">
-                  <div class="icon">
-                    <i class="fa-solid fa-gamepad"></i>
-                  </div>
-                  <h4>Games Page</h4>
-                  <p>
-                    Simple and cool page about same games, made for practice 
-                    responsive desing and have same fun. 
-                  </p>
-                </div>
-              </a>
-              </div>
-              <!-- ==== Services item End ==== -->
-              <!-- ==== Services item Start ==== -->
-              <div class="service-item">
-                <a target="_blank" href="https://doroteonavarrete.github.io/firstPage/">
-                <div class="service-item-inner">
-                  <div class="icon">
-                      <i class="fa-solid fa-fish"></i>                    
-                  </div>
-                  <h4>My First Page</h4>
-                  <p>
-                    I made it when I had just three classes of the front end course, motivated by curiosity about the styles and possibilities of css.
-                  </p>
-                </div>
-              </a>
-              </div>
-              <!-- ==== Services item End ==== -->
-              <!-- ==== Services item Start ==== -->
-              <div class="service-item">
-                <a target="_blank" href="https://autos-vip-bydoro.netlify.app/">
-                <div class="service-item-inner">
-                  <div class="icon">
-                    <i class="fa-solid fa-car"></i>                 
-                  </div>
-                  <h4>FrontEnd Final Project</h4>
-                  <p>
-                    This is the final project of the FrontEnd course, integrating HTML, CSS, Bootstrap and JavaScript.
-                  </p>
-                </div>
-              </a>
-              </div>
-              <!-- ==== Services item End ==== -->
-              <!-- ==== Services item Start ==== -->
-              <div class="service-item">
-                <a target="_blank" href="https://github.com/DoroteoNavarrete/calculadora-react">
-                <div class="service-item-inner">
-                  <div class="icon">
-                    <i class="fa-solid fa-calculator"></i>
-                  </div>
-                  <h4>Interactive Calculator</h4>
-                  <p>
-                    Made in a react course I made from freecodecamp, using hooks and components in various functions.
-                  </p>
-                </div>
-              </a>
-              </div>
-              <!-- ==== Services item End ==== -->
-              <!-- ==== Services item Start ==== -->
-              <div class="service-item">
-                <a target="_blank" href="https://doroteonavarrete.github.io/commentlist/">
-                <div class="service-item-inner">
-                  <div class="icon">
-                    <i class="fa-solid fa-bars"></i>
-                  </div>
-                  <h4>
-                    Comment List</h4>
-                  <p>
-                    Made in a react course I made from freecodecamp, using hooks and components in various functions                  </p>
-                </div>
+                <a class="contact-card reveal-item" href="tel:+59898653413">
+                    <div class="contact-card__icon"><i class="fas fa-phone"></i></div>
+                    <span class="contact-card__label">Phone</span>
+                    <span class="contact-card__value">+598 98 653413</span>
                 </a>
-              </div>
-              <!-- ==== Services item End ==== -->
-              <!-- ==== Services item Start ==== -->
-              <div class="service-item">
-                <a target="_blank" href="https://filmserch.netlify.app/">
-                <div class="service-item-inner">
-                  <div class="icon">
-                    <i class="fa fa-video"></i>
-                  </div>
-                  <h4>Movie Finder</h4>
-                  <p>
-                    Simple movie search engine, the name of the movie must be in English, here I tested the use of Vue.js, Boostrap and an API call.
-                  </p>
-                </div>
-              </a>
-              </div>
-              <!-- ==== Services item End ==== -->
-              <!-- ==== Services item Start ==== -->
-              <div class="service-item">
-                <a target="_blank" href="https://todolistbydoro.netlify.app/">
-                <div class="service-item-inner">
-                  <div class="icon">
-                    <i class="fa-solid fa-list-check"></i>
-                  </div> 
-                  <h4>ToDo List</h4>   
-                  <p>
-                    Task list made with React and Node.js, as part of a course.
-                  </p>
-                  </div>
-              </a>
-              </div>
-              <!-- ==== Services item End ==== -->
-              <!-- ==== Services item Start ==== -->
-              <div class="service-item">
-                <a target="_blank" href="https://testimoniosappdoro.netlify.app/">
-                <div class="service-item-inner">
-                  <div class="icon">
-                    <i class="fa-solid fa-comment"></i>
-                  </div>
-                  <h4>Testimonials</h4>
-                  <p>
-                    In this case make each testimonial as a react component, in which I receive and pass props, applying react tools and commands with node.
-                  </p>
-                </div>
-              </a>
-              </div>
-              <!-- ==== Services item End ==== -->
-              <!-- ==== Services item Start ==== -->
-              <div class="service-item">
-                <a target="_blank" href="https://clicounter.netlify.app/">
-                <div class="service-item-inner">
-                  <div class="icon">
-                    <i class="fa-solid fa-computer-mouse"></i>
-                  </div>
-                  <h4>Click Counter</h4>
-                  <p>
-                    Another exercise done in the freeCodeCamp course with React and Node.js, in this exercise I was curious about react and I really liked its use.                  
-                  </p>
-                </div>
-              </a>
-              </div>
-              <!-- ==== Services item End ==== -->
-              <!-- ==== Services item Start ==== -->
-              <div class="service-item">
-                <a target="_blank" href="https://github.com/DoroteoNavarrete/PORTFOLIO">
-                <div class="service-item-inner">
-                  <div class="icon">
-                    <i class="fa-solid fa-briefcase"></i>                    
-                  </div>
-                  <h4>Portfolio</h4>
-                  <p>
-                    In this section you will find the source code of this portfolio, if you have any questions or suggestions I am at your service.                  </p>
-                  </div>
-              </a>
-              </div>
-              <!-- ==== Services item End ==== -->
+                <a class="contact-card reveal-item" href="https://www.linkedin.com/in/doroteo-navarrete-1872a8235/" target="_blank" rel="noopener noreferrer">
+                    <div class="contact-card__icon"><i class="fab fa-linkedin"></i></div>
+                    <span class="contact-card__label">LinkedIn</span>
+                    <span class="contact-card__value">doroteo-navarrete</span>
+                </a>
+                <a class="contact-card reveal-item" href="https://github.com/DoroteoNavarrete" target="_blank" rel="noopener noreferrer">
+                    <div class="contact-card__icon"><i class="fab fa-github"></i></div>
+                    <span class="contact-card__label">GitHub</span>
+                    <span class="contact-card__value">DoroteoNavarrete</span>
+                </a>
+                <a class="contact-card reveal-item" href="https://www.instagram.com/doronavarrete/" target="_blank" rel="noopener noreferrer">
+                    <div class="contact-card__icon"><i class="fab fa-instagram"></i></div>
+                    <span class="contact-card__label">Instagram</span>
+                    <span class="contact-card__value">@doro.navarrete</span>
+                </a>
             </div>
-          </div>
-        </section>
-        <!-- ==== Portfolio Section end ==== -->
 
-        <!-- ==== Portfolio Section start ==== -->
-        <section name="For a future use" class="section hiddenSect">
-          <div class="container">
-            <div class="row">
-              <div class="section-title padd-15">
-                <h2>Portfolio</h2>
-              </div>
-            </div>
-            <div class="row">
-              <div class="portfolio-heading padd-15">
-                <h2>My Projects :</h2>
-              </div>
-            </div>
-            <div class="row">
-              <!-- ==== Portfolio item Start ==== -->
-              <div class="portfolio-item padd-15">
-                <div class="portfolio-item-inner shadow-dark">
-                  <div class="portfolio-img portfolio-img1">
-                    
-                  </div>
-                </div>
-              </div>
-              <!-- ==== Portfolio item End ==== -->
-              <!-- ==== Portfolio item Start ==== -->
-              <div class="portfolio-item padd-15">
-                <div class="portfolio-item-inner shadow-dark">
-                  <div class="portfolio-img portfolio-img2">
-                    <a href="#">
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <!-- ==== Portfolio item End ==== -->
-              <!-- ==== Portfolio item Start ==== -->
-              <div class="portfolio-item padd-15">
-                <div class="portfolio-item-inner shadow-dark">
-                  <div class="portfolio-img">
-                    <a href="#">
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <!-- ==== Portfolio item End ==== -->
-              <!-- ==== Portfolio item Start ==== -->
-              <div class="portfolio-item padd-15">
-                <div class="portfolio-item-inner shadow-dark">
-                  <div class="portfolio-img">
-                    <a href="#">
-                      <img src="./img/portfolio1.jpg" alt="" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <!-- ==== Portfolio item End ==== -->
-              <!-- ==== Portfolio item Start ==== -->
-              <div class="portfolio-item padd-15">
-                <div class="portfolio-item-inner shadow-dark">
-                  <div class="portfolio-img">
-                    <a href="#">
-                      <img src="./img/portfolio1.jpg" alt="" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <!-- ==== Portfolio item End ==== -->
-              <!-- ==== Portfolio item Start ==== -->
-              <div class="portfolio-item padd-15">
-                <div class="portfolio-item-inner shadow-dark">
-                  <div class="portfolio-img">
-                    <a href="#">
-                      <img src="./img/portfolio1.jpg" alt="" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <!-- ==== Portfolio item End ==== -->
-            </div>
-          </div>
-        </section>
-        <!-- ==== Portfolio Section end ==== -->
-
-        <!-- ==== Certificate Section start ==== -->
-        <section class="certificates section" id="certificates">
-          <div class="container">
-            <div class="row" style="padding-top: 30px;">
-              <div class="certificates-carousel">
-                <button class="prev" onclick="prevSlide()">&#10094;</button>
-                <div class="carousel-inner">
-
-                  <div class="carousel-item">
-                    <img src="./img/certificates/GitHub-Universe-2023-Cloud-Skills-Challenge.png" alt="Certificado 20">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./img/certificates/Microsoft-Learn-Cloud-Skills-Challenge-at-Ignite.png" alt="Certificado 19">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./img/certificates/AZ-104.jpg" alt="Certificado 18">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./img/certificates/Microsoft-Learn-Cloud-Skills-Challenge-at-Build.png" alt="Certificado 17">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./img/certificates/EnglishB1+.png" alt="Certificado 16">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./img/certificates/Microsoft-Azure-Fundamentals-Curso-AZ-900.jpg" alt="Certificado 15">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./img/certificates/Professional-Integration-Developer-Certification.png" alt="Certificado 14">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./img/certificates/Associate-Integration-Developer-Certification-2024.png" alt="Certificado 13">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./img/certificates/C-Foundational-2023.png" alt="Certificado 12">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./img/certificates/Instructor-PEI-Java-React.png" alt="Certificado 11">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./img/certificates/Intermediate-A.png" alt="Certificado 10">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./img/certificates/SQL-Introduction-2022.png" alt="Certificado 9">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./img/certificates/Python-101-for-Data-Science-2023.png" alt="Certificado 8">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./img/certificates/Data-Analysis-with-Python-2023.png" alt="Certificado 7">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./img/certificates/Net-2023.jpg" alt="Certificado 6">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./img/certificates/Angular-2022.jpg" alt="Certificado 5">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./img/certificates/Net-EF-6-2022.jpg" alt="Certificado 4">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./img/certificates/PEI-Java-React.png" alt="Certificado 3">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./img/certificates/JavaScript-Algorithms-and-Data-Structures-2022.png" alt="Certificado 2">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./img/certificates/Responsive-Web-Design-2022.png" alt="Certificado 1">
-                  </div>
-
-                  <!-- Agrega más certificados según sea necesario -->
-                </div>
-                <button class="next" onclick="nextSlide()">&#10095;</button>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- ==== Certificate Section end ==== -->
-
-        <!-- ==== Contact Section start ==== -->
-        <section class="contact section" id="contact">
-          <div class="container">
-            <div class="row">
-              <div class="section-title padd-15">
-                <h2>Contact Me:</h2>
-              </div>
-            </div>
-            <h3 class="contact-title">Have you any questions ?</h3>
-            <h4 class="contact-sub-title">I'm at your service</h4>
-            <div class="row">
-              <!-- ==== Contact info Item =====-->
-              <div class="contact-info-item">
-                <div class="icon">
-                  <i class="fa fa-phone"></i>
-                </div>
-                <h4>Call Us On</h4>
-                <p>+598 98 653413</p>
-              </div>
-              <!-- ==== Contact info Item =====-->
-              <!-- ==== Contact info Item =====-->
-              <div class="contact-info-item">
-                <div class="icon">
-                  <i class="fa fa-envelope"></i>
-                </div>
-                <h4>E-mail</h4>
-                <p>navarretedoro@gmail.com</p>
-              </div>
-              <!-- ==== Contact info Item =====-->
-              <!-- ==== Contact info Item =====-->
-              <div class="contact-info-item">
-                <a target="_blank" href="https://www.instagram.com/doronavarrete/">
-                <div class="icon">
-                  <i class="fa-brands fa-instagram-square"></i>
-                </div>
-                <h4>Instagram</h4>
-                <p>Doro Navarrete</p>
-              </a>
-              </div>
-              <!-- ==== Contact info Item =====-->
-              <!-- ==== Contact info Item =====-->
-              <div class="contact-info-item">
-                <a href="https://www.linkedin.com/in/doroteo-navarrete-1872a8235/" target="_blank">
-                <div class="icon">
-                  <i class="fa-brands fa-linkedin"></i>
-                </div>
-                <h4>Linkedin</h4>
-                <p>DoroNavarrete</p>
-              </a>
-              </div>
-              <!-- ==== Contact info Item End =====-->
-            </div>
-            <h3 class="contact-title">Send Me a Message</h3>
-            <h4 class="contact-sub-title">I'm very responsive to messages</h4>
-            <!-- ==== Contact Form ==== -->
-            <form name="sitio" netlify>
-            <div class="row">
-              <div class="contact-form padd-15">
-                <div class="row">
-                  <div class="form-item col-6 padd-15">
+            <form name="sitio" netlify class="contact-form reveal">
+                <div class="form-row">
                     <div class="form-group">
-                      <input netlify
-                        type="text"
-                        name="name"
-                        class="form-control"
-                        placeholder="Name"
-                      />
+                        <input netlify type="text" name="name" class="form-control" placeholder="Name" />
                     </div>
-                  </div>
-                  <div class="form-item col-6 padd-15">
                     <div class="form-group">
-                      <input netlify
-                      name="email"
-                        type="email"
-                        class="form-control"
-                        placeholder="Email"
-                      />
+                        <input netlify name="email" type="email" class="form-control" placeholder="Email" />
                     </div>
-                  </div>
                 </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="form-item col-12 padd-15">
                 <div class="form-group">
-                  <input netlify type="text" name="subject" class="form-control" placeholder="Subject">
+                    <input netlify type="text" name="subject" class="form-control" placeholder="Subject">
                 </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="form-item col-12 padd-15">
                 <div class="form-group">
-                  <textarea netlify name="textarea" id="textarea" class="form-control" placeholder="Message"></textarea>
-              </div>
-            </div>
-            </div>
-            <div class="row">
-              <div class="form-item col-12 padd-15">
-                <button type="submit" class="btn">Send Message</button>
-              </div>
-            </div>
-          </form>
-        </section>
-        <!-- ==== Contact Section end ==== -->
-      </div>
-      <!-- ==== MAIN Content end ==== -->
-    </div>
+                    <textarea netlify name="textarea" id="textarea" class="form-control" placeholder="Message" rows="5"></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
 
-    <!-- ==== MAIN end ==== -->
+    <!-- ======================== FOOTER ======================== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="#home" class="footer-logo-text"><span>D</span>oro</a>
+                <p class="footer-slogan">Semi-Senior FullStack &amp; Cloud Software Developer, building on AWS Serverless, .NET and Angular — with AI-assisted workflows woven into how I ship.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:navarretedoro@gmail.com">navarretedoro@gmail.com</a></p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+59898653413">+598 98 653413</a></p>
+                <p><i class="fab fa-github"></i> <a href="https://github.com/DoroteoNavarrete" target="_blank" rel="noopener noreferrer">DoroteoNavarrete</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Doroteo Navarrete. All rights reserved.</p>
+        </div>
+    </footer>
 
-    <!-- ==== Style Switcher start ==== -->
-    <div id="style-switcher" class="style-switcher">
-      <div class="style-switcher-toggler s-icon">
-        <i class="fas fa-cog fa-spin"></i>
-      </div>
-      <div class="day-night s-icon">
-        <i class="fas"></i>
-      </div>
-      <h4>Theme Colors</h4>
-      <div class="colors">
-        <span class="color-1" onclick="setActiveStyle('color-1')"></span>
-        <span class="color-2" onclick="setActiveStyle('color-2')"></span>
-        <span class="color-3" onclick="setActiveStyle('color-3')"></span>
-        <span class="color-4" onclick="setActiveStyle('color-4')"></span>
-        <span class="color-5" onclick="setActiveStyle('color-5')"></span>
-      </div>
-    </div>
-    <!-- ==== Style Switcher end ==== -->
-
-    <!-- ==== JS Files ==== -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" referrerpolicy="no-referrer"></script>  </body>
-    <script src="app/style-switcher.js"></script>
-    <script src="app/script.js"></script>
+    <script src="script.js"></script>
+</body>
 </html>
